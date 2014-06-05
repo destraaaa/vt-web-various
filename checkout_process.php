@@ -9,13 +9,10 @@ $endpoint = "https://api.sandbox.veritrans.co.id/v2/charge";
 //$endpoint = "https://api.sandbox.veritrans.co.id/v2/charge";
 
 
-$transaction_details = array(
-	'order_id' 			=> 'order3332',
-	'gross_amount' 	=> 200000
-);
 
 // Populate items
 $json = array();
+$gross_amount=0;
 for($i=1; $i<=2; $i++){
 	$id = "id".$i;
 	$price = "price".$i;
@@ -25,11 +22,16 @@ for($i=1; $i<=2; $i++){
 		$json['id'] = $_POST[$id];
         $json['price'] = $_POST[$price];
 		$json['quantity'] = $_POST[$quantity];
+		$gross_amount = $gross_amount + $_POST[$price]*$_POST[$quantity];
 		$json['name'] = $_POST[$name];
         $items[] = $json;
 	}
 }
-
+echo $gross_amount;
+$transaction_details = array(
+	'order_id' 			=> date("Y/m/d H:i:s"),
+	'gross_amount' 	=> $gross_amount
+);
 // Populate customer's billing address
 $billing_address = array(
 	'first_name' 		=> "Andri",
