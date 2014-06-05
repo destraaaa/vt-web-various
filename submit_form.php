@@ -38,90 +38,49 @@
 						<h2><i class="icon-pencil"></i> Journal Information</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="add_jurnal.php" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="checkout_process.php" method="post" enctype="multipart/form-data">
 							<fieldset>
-							<div class="control-group">
-								<label class="control-label">Paper Status</label>
-								<div class="controls">
-									<label class="radio">
-										<input type="radio" name="optionsRadios" id="optionsRadios1" value="baru" checked="" onclick="show_baru()">
-										New Paper
+							  <div class="control-group">
+									<label class="checkbox inline">
+									  <input type="checkbox" name="id1" id="inlineCheckbox1" value="option1"> item1
 									</label>
-									<div style="clear:both"></div>
-									<label class="radio">
-										<input type="radio" name="optionsRadios" id="optionsRadios2" value="revisi" onclick="show_revisi()">
-										Revision Paper
+									<div class="controls">
+									  <div class="input disabled">
+										<input name="name1" size="16" type="text" value="Adidas f50">
+									  </div>
+									</div>
+									<div class="controls">
+									  <div class="input disabled">
+										<input name="price1" size="16" type="text" value="200000">
+									  </div>
+									</div>
+									<div class="controls">
+								  	  <div class="input disabled">
+									    <input name="quantity1" size="16" type="text">
+								  	  </div>
+									</div>
+									<label class="checkbox inline">
+									  <input type="checkbox" name="id2" id="inlineCheckbox2" value="option2"> item2
 									</label>
-								</div>
-							  </div>
-							  <div id="baru">
-							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Title</label>
-								<div class="controls">
-								  <div class="input-prepend">
-									<input id="title" name="title" size="16" type="text">
+									<div class="controls">
+									  <div class="input disabled">
+										<input name="name2" size="16" type="text" value="Permen Karet f50">
+									  </div>
+									</div>
+									<div class="controls">
+								  	  <div class="input disabled">
+									    <input name="price2" size="16" type="text" value="500">
+								  	  </div>
+									</div>
+									<div class="controls">
+								  	  <div class="input disabled">
+									    <input name="quantity2" size="16" type="text">
+								  	  </div>
+									</div>
 								  </div>
-								</div>
-							  </div>
-							  
-							  
-							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Abstract</label>
-								<div class="controls">
-								  <div>
-									<textarea class="autogrow" id="abstrak" name="abstrak">Press enter here, it will grow automatically.</textarea>
-								  </div>
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Key words</label>
-								<div class="controls">
-								  <div class="input-prepend">
-									<input id="keywords" name="keywords" size="16" type="text">
-								  </div>
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="prependedInput">Noveltist</label>
-								<div class="controls">
-								  <div class="input-prepend">
-									<input id="keywords" name="noveltist" size="16" type="text">
-								  </div>
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label">File Upload</label>
-								<div class="controls">
-								  <p><input type="file" name="file" id="file" accept="application/pdf"> .pdf, .docx, .doc</p>
-								</div>
-							  </div>
-							  </div>
-							  <div id="revisi" style="display:none">
-								<div class="control-group">
-								<label class="control-label" for="kategori">Revision From</label>
-								<div class="controls">
-								  <select id="revisi_dari" name="revisi_dari" data-rel="chosen">
-									<?php include "database_connection.php";
-										$query_kat = "select * from jurnal where diupload_oleh='".$username."' and status=3";
-										$hasil = mysql_query($query_kat,$db);
-										if(mysql_num_rows($hasil)==0) {
-											echo 'Belum ada jurnal untuk direvisi';
-										} else {
-											while($row = mysql_fetch_array($hasil)) {
-												echo '<option>'.$row['judul'].'</option>';
-											}
-										}
-									?>
-								  </select>
-								</div>
-							  </div>
-								<div class="control-group">
-								<label class="control-label">Revision File Upload</label>
-								<div class="controls">
-								  <p><input type="file" name="file_revisi" id="file_revisi" accept="application/pdf"> .pdf, .docx, .doc</p>
-								</div>
-							  </div>
-							  </div>
+
+
+
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">Submit</button>
 							  </div>
