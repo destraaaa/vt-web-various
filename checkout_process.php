@@ -10,7 +10,7 @@ $endpoint = "https://api.sandbox.veritrans.co.id/v2/charge";
 
 
 $transaction_details = array(
-	'order_id' 			=> 'order3762',
+	'order_id' 			=> 'order3332',
 	'gross_amount' 	=> 200000
 );
 
@@ -67,7 +67,7 @@ $customer_details = array(
 $transaction_data = array(
 	'payment_type' 			=> 'vtweb', 
 	'vtweb' 						=> array(
-		'enabled_payments' 	=> array('credit_card')
+	'enabled_payments' 	=> array('credit_card','bca_klikbca','bca_klikpay','mandiri_clickpay', 'cimb_clicks', 'bri_epay', 'bii', 'permata', 'xl_tunai', 'xl_potong_pulsa', 'telkomsel_cash')
 	),
 	//'secure'				=> true,
 	'transaction_details'=> $transaction_details,
@@ -114,10 +114,10 @@ $response = json_decode($curl_response);
 // Check Response
 if($response->status_code == "201")
 {
-	var_dump($response);
+	//var_dump($response);
 	//success
 	//redirect to vtweb payment page
-	//header("Location: ".$response->redirect_url);
+	header("Location: ".$response->redirect_url);
 }
 else
 {
