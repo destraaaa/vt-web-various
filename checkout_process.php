@@ -15,20 +15,20 @@ $transaction_details = array(
 );
 
 // Populate items
-$items = array(
-	array(
-		'id' 				=> 'item1',
-		'price' 		=> 100000,
-		'quantity' 	=> 1,
-		'name' 			=> 'Adidas f50'
-	),
-	array(
-		'id'				=> 'item2',
-		'price' 		=> 50000,
-		'quantity' 	=> 2,
-		'name' 			=> 'Nike N90'
-	)
-);
+$json = array();
+for($i=1; $i<=2; $i++){
+	$id = "id".$i;
+	$price = "price".$i;
+	$quantity = "quantity".$i;
+	$name = "name".$i;
+	if(isset($_POST[$id])){
+		$json['id'] = $_POST[$id];
+        $json['price'] = $_POST[$price];
+		$json['quantity'] = $_POST[$quantity];
+		$json['name'] = $_POST[$name];
+        $items[] = $json;
+	}
+}
 
 // Populate customer's billing address
 $billing_address = array(
