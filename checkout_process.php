@@ -11,6 +11,7 @@ $endpoint = "https://api.sandbox.veritrans.co.id/v2/charge";
 
 
 // Populate items
+date_default_timezone_set('Asia/Jakarta');
 $json = array();
 $gross_amount=0;
 for($i=1; $i<=2; $i++){
@@ -27,15 +28,15 @@ for($i=1; $i<=2; $i++){
         $items[] = $json;
 	}
 }
-echo $gross_amount;
+
 $transaction_details = array(
-	'order_id' 			=> date("Y/m/d H:i:s"),
+	'order_id' 			=> date("H:i:s"),
 	'gross_amount' 	=> $gross_amount
 );
 // Populate customer's billing address
 $billing_address = array(
-	'first_name' 		=> "Andri",
-	'last_name' 		=> "Setiawan",
+	'first_name' 		=> "The",
+	'last_name' 		=> "Intern",
 	'address' 			=> "Karet Belakang 15A, Setiabudi.",
 	'city' 					=> "Jakarta",
 	'postal_code' 	=> "51161",
@@ -45,8 +46,8 @@ $billing_address = array(
 
 // Populate customer's shipping address
 $shipping_address = array(
-	'first_name' 	=> "John",
-	'last_name' 	=> "Watson",
+	'first_name' 	=> "Thor",
+	'last_name' 	=> "Odinson",
 	'address' 		=> "Bakerstreet 221B.",
 	'city' 				=> "Jakarta",
 	'postal_code' => "51162",
@@ -56,8 +57,8 @@ $shipping_address = array(
 
 // Populate customer's Info
 $customer_details = array(
-	'first_name' 			=> "Andri",
-	'last_name' 			=> "Setiawan",
+	'first_name' 			=> "The",
+	'last_name' 			=> "Intern",
 	'email' 					=> "andrisetiawan@me.com",
 	'phone' 					=> "081322311801",
 	'billing_address' => $billing_address,

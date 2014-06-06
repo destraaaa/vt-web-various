@@ -12,7 +12,7 @@
 		http://twitter.com/halalit_usman
 	-->
 	<meta charset="utf-8">
-	<title>Submit | Website Jurnal Sosioteknologi</title>
+	<title>Buy | Veritrans' Merchant</title>
 	<?php include "meta_and_css.php" ?>
 </head>
 
@@ -35,14 +35,14 @@
 			<div class="row-fluid sortable">
 				<div class="box span10">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-pencil"></i> Journal Information</h2>
+						<h2><i class="icon-shopping-cart"></i> Buy</h2>
 					</div>
 					<div class="box-content">
 						<form class="form-horizontal" action="checkout_process.php" method="post" enctype="multipart/form-data">
 							<fieldset>
 							  <div class="control-group">
 									<label class="checkbox inline">
-									  <input type="checkbox" name="id1" id="inlineCheckbox1" value="option1"> item1
+									  <input type="checkbox" name="id1"			 id="inlineCheckbox1" value="option1"> item1
 									</label>
 									<div class="controls">
 									  <div class="input disabled">
